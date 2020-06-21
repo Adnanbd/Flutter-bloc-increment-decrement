@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/blocs/counter_bloc.dart';
+import 'package:provider/provider.dart';
+
+class Decrement extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+     final CounterBloc counterBloc = Provider.of<CounterBloc>(context);
+    return RaisedButton(
+      onPressed: (){
+
+        counterBloc.decrement();
+
+      },
+      child: Text('Decrement'),
+      
+    );
+  }
+}
